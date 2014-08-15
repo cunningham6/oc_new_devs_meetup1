@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>The Greatest Magazine for People</title>
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+		}
+		#female-section {
+			background: url(1.jpg) top left;
+			width: 100%;
+			height: 1200px;
+		}
+		
+		#male-section {
+			background: url(2.jpg) top left;
+			height: 1110px;
+		}
+		
+		h1 {
+			text-align: center;
+			font-size: 80px;
+			font-family: Monotype Corsiva;
+		}
+		
+		#female-section h1 {
+			color: #ff00ff;
+		}
+		
+		#male-section h1 {
+			color: white;
+			font-family: Times New Roman;
+		}
+		
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		
+		#menu-container ul li {
+			margin: 0;
+			padding: 10px 0 10px 0;
+			width: 50%;
+			float: left;
+			background: #000;
+			color: #fff;
+			text-align: center;
+			font-size: 25px;
+			
+		}
+		
+		#menu-container ul li#female-menu-item {
+			background: blue;
+			color: pink;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="scrollto.js"></script>
+	<script>
+		$().ready(function() {
+			$('#menu-container ul li').click(function() {
+				
+				var id = $(this).attr('id');
+				
+				if(id == 'female-menu-item')
+				{
+					$(document).scrollTo('#female-section');
+				}
+				else {
+					$(document).scrollTo('#male-section');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div id="menu-container">
+	<ul>
+		<li id="female-menu-item">LA FEMME</li>
+		<li>L'HOMME</li>
+	</ul>
+</div>
+
+<div id="female-section" class="">
+	<h1>FEMALE PERSON</h1>
+</div>
+
+<div id="male-section">
+	<h1>Eh</h1>
+</div>
+
+</body>
+</html>
